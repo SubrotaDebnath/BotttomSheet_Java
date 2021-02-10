@@ -1,9 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PersistentBottomSheet">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:text="Show About"
+            android:layout_gravity="center|top"
+            android:onClick="show"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:text="Hide About"
+            android:layout_gravity="center|top"
+            android:onClick="hide"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="State"
+            android:layout_margin="24dp"
+            android:id="@+id/stateInfo"
+            android:textSize="24sp"/>
+    </LinearLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/persistentBottomSheet"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        app:cardElevation="5dp"
+        app:cardCornerRadius="16dp"
+        app:cardBackgroundColor="@android:color/holo_orange_light"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="55dp">
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="About"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="24sp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:textAlignment="inherit"
+                    android:text="I'm a Mobile Application developer and an enthusiastic person who loves to explore different paths and make new experiences besides I'm a hard-working, honest individual, always willing to learn new skills. Quite friendly, helpful, and polite, have a good sense of humor. To fulfill my object, I am outgoing and tactful and able to listen effectively when solving problems."
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
