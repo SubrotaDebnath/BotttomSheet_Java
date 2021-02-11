@@ -19,6 +19,8 @@ public class PersistentBottomSheet extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_persistent_bottom_sheet);
 
+        setTitle("Persistent Bottom Sheet");
+
         state = findViewById(R.id.stateInfo);
 
         View bottomSheet = findViewById(R.id.persistentBottomSheet);
